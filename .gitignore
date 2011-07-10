@@ -19,6 +19,7 @@
 /tags
 /TAGS
 /cscope*
+Makefile
 *.obj
 *.lib
 *.sln
