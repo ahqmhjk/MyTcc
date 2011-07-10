@@ -24,21 +24,21 @@
 
 /* test various include syntaxes */
 
-#define TCCLIB_INC <tcclib.h>
-#define TCCLIB_INC1 <tcclib
-#define TCCLIB_INC2 h>
-#define TCCLIB_INC3 "tcclib"
+//#define TCCLIB_INC <tcclib.h>
+//#define TCCLIB_INC1 <tcclib
+//#define TCCLIB_INC2 h>
+//#define TCCLIB_INC3 "tcclib"
 
-#include TCCLIB_INC
+//#include TCCLIB_INC
 
-#include TCCLIB_INC1.TCCLIB_INC2
+//#include TCCLIB_INC1.TCCLIB_INC2
 
-#include TCCLIB_INC1.h>
+//#include TCCLIB_INC1.h>
 
 /* gcc 3.2 does not accept that (bug ?) */
 //#include TCCLIB_INC3 ".h"
 
-#include <tcclib.h>
+//#include <tcclib.h>
 
 #include "tcclib.h"
 
@@ -98,7 +98,7 @@ int isid(int c);
 #define glue(a, b) a ## b
 #define xglue(a, b) glue(a, b)
 #define HIGHLOW "hello"
-#define LOW LOW ", world"
+#define LOWLOW ", world"
 
 #define min(a, b) ((a) < (b) ? (a) : (b))
 
@@ -140,7 +140,7 @@ int qq(int x)
 
 void macro_test(void)
 {
-    printf("macro:\n");
+    printf("macro:\n");
     pf("N=%d\n", N);
     printf("aaa=%d\n", AAA);
 
@@ -498,7 +498,9 @@ struct struct1 st1, st2;
 int main(int argc, char **argv)
 {
     string_test();
+		printf("1111111111111\n");
     expr_test();
+		printf("1111111111111\n");
     macro_test();
     scope_test();
     forward_test();
@@ -1873,9 +1875,8 @@ void whitespace_test(void)
 {
     char *str;
 
-#if 1
-    pri\
-ntf("whitspace:\n");
+#if 1
+    printf("whitspace:\n");
 #endif
     pf("N=%d\n", 2);
 
@@ -1896,7 +1897,7 @@ ntf("min=%d\n", 4);
 ";
     printf("len1=%d str[0]=%d\n", strlen(str), str[0]);
 #endif
-    printf("len1=%d\n", strlen("a
+    printf("len1=%d\n", strlen("a
 "));
 #endif /* ACCEPT_CR_IN_STRINGS */
 }
