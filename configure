@@ -381,7 +381,7 @@ fi
 
 rm -f $TMPO $TMPC $TMPE $TMPS $TMPH
 
-echo "Create Makefile"
+echo "Creating Makefile"
 
 echo "#                         " > Makefile
 echo "# Tiny C Compiler Makefile" >> Makefile
