@@ -1,14 +1,3 @@
-#
-# Tiny C Compiler Makefile
-#
-
-TOP ?= .
-include $(TOP)/config.mak
-
-CFLAGS+=-g -Wall
-CFLAGS_P=$(CFLAGS) -pg -static -DCONFIG_TCC_STATIC
-LIBS_P=
-
 ifneq ($(GCC_MAJOR),2)
 CFLAGS+=-fno-strict-aliasing
 endif
@@ -267,6 +256,6 @@ local_clean:
 	rm -vf $(PROGS) tcc_p$(EXESUF) tcc.pod *~ *.o *.a *.out libtcc_test$(EXESUF)
 
 distclean: clean
-	rm -vf config.h config.mak config.texi tcc.1 tcc-doc.html
+	rm -vf config.h config.mak config.texi tcc.1 tcc-doc.html Makefile
 
 endif # ifeq ($(TOP),.)

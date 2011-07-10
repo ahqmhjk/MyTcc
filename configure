@@ -380,3 +380,20 @@ else
 fi
 
 rm -f $TMPO $TMPC $TMPE $TMPS $TMPH
+
+echo "Create Makefile"
+
+echo "#                         " > Makefile
+echo "# Tiny C Compiler Makefile" >> Makefile
+echo "#                         " >> Makefile
+echo "                          " >> Makefile
+
+echo "TOP ?= ." >> Makefile
+echo "include \$(TOP)/config.mak" >> Makefile
+
+echo "CFLAGS+=-g -Wall" >> Makefile
+echo "CFLAGS_P=\$(CFLAGS) -pg -static -DCONFIG_TCC_STATIC" >> Makefile
+echo "LIBS_P=        " >> Makefile
+
+cat Makefile.mk >> Makefile
+
